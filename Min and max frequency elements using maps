@@ -1,0 +1,34 @@
+/* finding elements with minimum and maximum frequency .it is made sure that there exits exits only one such element with min and max frequency.
+example input:12
+4 4 4 4 5 5 2 3 3 2 2 3
+output:max:4 min:5   */
+
+
+
+#include <iostream>
+using namespace std;
+#include<bits/stdc++.h>
+bool comp(pair<int,int>i,pair<int,int>j)
+{
+    return i.second<j.second;
+}
+int main() {
+	int n,i,k;
+	cin>>n;
+	map<int,int> m;
+	for(i=0;i<n;i++)
+	{
+	    cin>>k;
+	    m[k]++;
+	}
+   pair<int,int>min=*min_element(m.begin(),m.end(),comp);
+   pair<int,int>max=*max_element(m.begin(),m.end(),comp);
+   for(auto x:m)
+   {
+       if(x.second==min.second)
+       cout<<"min:"<<x.first<<" ";
+       if(x.second==max.second)
+       cout<<"max:"<<x.first<<" ";
+   }
+	return 0;
+}
