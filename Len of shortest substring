@@ -1,0 +1,18 @@
+/*Given a string comprised of lowercase letters in the range ascii[a-z],find the length of shortest substring that contains atleast one of each of the letters in the string
+ex: input-> dabbcabcd
+output->4
+explanation : list{a,b,c,d}
+abcd->sortest substring   */
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    map<char,int>m;
+    for(int i=0;i<s.length();i++)
+        m[s[i]]++;
+    cout<<m.size();
+}
